@@ -1,0 +1,65 @@
+#
+# Copyright (c) 2007 TIBCO Software Inc.
+# All Rights Reserved.
+#
+# This software is the confidential and proprietary information of
+# TIBCO Software Inc.
+#
+#
+#========================================================== 
+# *** Common variables. Modify these only. ***
+#========================================================== 
+#
+tibco.env.PSP=;
+tibco.env.JVM_LIB_PATH=C:/tibco/tibcojre/1.6.0/bin/server/jvm.dll
+tibco.env.JVM_LIB_DIR=C:/tibco/tibcojre/1.6.0/bin/client
+tibco.env.JVM_LIB_SERVER_DIR=C:/tibco/tibcojre/1.6.0/bin/server
+tibco.env.RV_HOME=C:/tibco/tibrv/8.3
+tibco.env.HAWK_HOME=C:/tibco/hawk/4.9
+tibco.env.TPCL_HOME=C:/tibco/tpcl/5.7
+tibco.env.TRA_HOME=C:/tibco/tra/5.7
+tibco.env.TRA_APPEND_VERSION=5.7
+
+
+#
+# Specifies the initial Java heap size to allocate
+java.heap.size.max 512M
+# 
+#========================================================== 
+# *** Do NOT modify beyond this line ***
+#========================================================== 
+#
+tibco.env.PATH .;%TRA_HOME%/hotfix/bin;%TRA_HOME%/bin;%TPCL_HOME%/bin;%RV_HOME%/bin;%PATH%
+
+tibco.env.LD_LIBRARY_PATH %TRA_HOME%/hotfix/lib;%TRA_HOME%/lib;%TPCL_HOME%/lib;%RV_HOME%/lib;%JVM_LIB_SERVER_DIR%;%JVM_LIB_DIR%
+
+tibco.env.SHLIB_PATH %TRA_HOME%/hotfix/lib;%TRA_HOME%/lib;%TPCL_HOME%/lib;%RV_HOME%/lib;%JVM_LIB_SERVER_DIR%;%JVM_LIB_DIR%
+
+tibco.env.LIBPATH %TRA_HOME%/hotfix/lib;%TRA_HOME%/lib;%TPCL_HOME%/lib;%RV_HOME%/lib;%JVM_LIB_SERVER_DIR%;%JVM_LIB_DIR%
+
+#
+# Specifies the JVM to be used to launch this application
+java.library %JVM_LIB_PATH%
+
+#
+# Specifies the class to launch
+java.start.class com.tibco.administrator.command.tool.ApplicationManagement
+#
+# Specifies the main function in invoke
+java.start.method main
+
+
+#
+# Specifies the -Djava.ext.dirs flag
+tibco.class.path.extended %TRA_HOME%/hotfix/lib;%TRA_HOME%/lib;%TPCL_HOME%/lib;%RV_HOME%/bin;%RV_HOME%/lib/tibrvj.jar;%HAWK_HOME%/bin;%HAWK_HOME%/lib;%TPCL_HOME%/jdbc;%TPCL_HOME%/tomcat/5.5/server/lib;%TPCL_HOME%/tomcat/server/lib/jakarta-regexp-1.2.jar;%TPCL_HOME%/tomcat/5.5/common/lib;%TPCL_HOME%/tomcat/common/lib/commons-collections.jar;%TPCL_HOME%/lib/entrust
+
+
+#
+# Specifies the remaining arguments to pass into the application
+#application.args 
+
+
+# eof
+java.property.TIBCO_TRA_HOME %TRA_HOME%
+java.property.TIBCO_TRA_VERSION %TRA_APPEND_VERSION%
+
